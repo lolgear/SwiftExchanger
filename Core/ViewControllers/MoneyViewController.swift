@@ -8,6 +8,16 @@
 
 import Foundation
 import UIKit
+class MoneyView {
+    class func moneyFromDouble(value: Double) -> String? {
+        let decimalNumber = NSDecimalNumber(value: value)
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .decimal
+        formatter.maximumFractionDigits = 2
+        return formatter.string(from: decimalNumber)
+    }
+}
+
 class MoneyViewController: UIViewController {
     //MARK: Structures
     struct Model {
@@ -59,8 +69,8 @@ extension MoneyViewController {
             if let model = self.model {
                 self.currencyLabel.text = model.currency
                 // add money format
-                self.valueLabel.text = "\(model.value)"
-                self.exchangeLabel.text = "(\(model.sign.symbol)\(model.exchange))"
+                self.valueLabel.text = MoneyView.moneyFromDouble(value: model.value)
+                self.exchangeLabel.text = model.sign.symbol + (MoneyView.moneyFromDouble(value: model.exchange) ?? "")
             }
         }
     }
