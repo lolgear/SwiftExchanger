@@ -1,0 +1,2 @@
+# SwiftExchanger
+Trader test app
