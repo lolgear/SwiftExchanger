@@ -53,6 +53,7 @@ class ApplicationSettingsStorage {
         }
         set {
             settings[Attributes.alreadyConfiguredAfterRunAtFirstTime.identifier] = newValue as AnyObject
+            self.save()
         }
     }
     

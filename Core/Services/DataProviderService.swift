@@ -52,7 +52,7 @@ extension DataProviderService {
         self.dataProvider.updateQuotes {
             (result, error) in
             // log something?
-            LoggingService.logVerbose("\(self) \(#function) fetch something? \(result) error: \(error)")
+            LoggingService.logVerbose("\(self) \(#function) fetch something? \(result) error: \(String(describing: error))")
         }
     }
     //what? escaping without optionals?
