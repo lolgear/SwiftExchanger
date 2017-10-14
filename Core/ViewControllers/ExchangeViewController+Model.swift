@@ -17,8 +17,6 @@ protocol ExchangeViewControllerModelObservingProtocol {
 extension ExchangeViewController {
     class Model: NSObject {
         //MARK: Properties
-        private(set) var sourceCode: String?
-        private(set) var targetCode: String?
         var quotes: NSFetchedResultsController<Quote>?
         
         var sourceModel: MoneyListViewController.Model?
@@ -48,6 +46,9 @@ extension ExchangeViewController.Model: NSFetchedResultsControllerDelegate {
 // MARK: Find
 extension ExchangeViewController.Model {
     func findQuote(_ source: String, _ target: String, in context: NSManagedObjectContext) -> Quotable? {
+        if (source == target) {
+            return VirtualQuote.oneToOneQuote(sourceCode: source)
+        }
         return Quote.virtualFind(source: source, target: target, context: context)
     }
 }
@@ -61,13 +62,11 @@ extension ExchangeViewController.Model {
     }
     
     func configuredByCurrencies(_ sourceCode: String, _ targetCode: String) -> Self {
-        self.sourceCode = sourceCode
-        self.targetCode = targetCode
         if let model = self.sourceModel {
-            model.updateCurency(currency: self.sourceCode)
+            model.updateCurrency(currency: sourceCode)
         }
         if let model = self.targetModel {
-            model.updateCurency(currency: self.targetCode)
+            model.updateCurrency(currency: targetCode)
         }
         return self
     }
@@ -77,16 +76,26 @@ extension ExchangeViewController.Model {
             _ = model.configuredByMoney(money: sourceMoney)
         }
         else {
-            self.sourceModel = MoneyListViewController.Model(moneyList: sourceMoney)
+            self.sourceModel = MoneyListViewController.Model(moneyList: sourceMoney, identifier: .source)
+            self.sourceModel?.modelDelegate = self
         }
         
         if let model = self.targetModel {
             _ = model.configuredByMoney(money: targetMoney)
         }
         else {
-            self.targetModel = MoneyListViewController.Model(moneyList: targetMoney)
+            self.targetModel = MoneyListViewController.Model(moneyList: targetMoney, identifier: .target)
+            self.targetModel?.modelDelegate = self
         }
         return self
+    }
+}
+
+//MARK: Model protocol adoption
+extension ExchangeViewController.Model: MoneyListViewControllerModelProtocol {
+    func didSelectCurrency(current: String?) {
+        // we should recalculate value
+        self.updateSourceValue(value: self.currentSourceValue ?? 0)
     }
 }
 
@@ -121,9 +130,10 @@ extension ExchangeViewController.Model {
 //MARK: Exchange
 extension ExchangeViewController.Model {
     var currentQuote: Quotable? {
-        guard let sourceCode = self.sourceCode, let targetCode = self.targetCode, let context = self.quotes?.managedObjectContext else {
+        guard let sourceCode = self.currentSourceCode, let targetCode = self.currentTargetCode, let context = self.quotes?.managedObjectContext else {
             return nil
         }
+        // should exists?
         return self.findQuote(sourceCode, targetCode, in: context)
     }
     

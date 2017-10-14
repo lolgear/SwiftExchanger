@@ -15,12 +15,7 @@ import CoreData
 import DatabaseBeaver
 import SnapKit
 import SwiftMessages
-class ExchangeViewController: UIViewController {
-    enum WidgetIdentifier: String {
-        case source
-        case target
-    }
-    
+class ExchangeViewController: UIViewController {    
     //MARK: Properties
     @IBOutlet weak var sourceView: UIView!
     @IBOutlet weak var targetView: UIView!
@@ -47,13 +42,11 @@ class ExchangeViewController: UIViewController {
         }
         self.sourceViewController = {
             let controller = MoneyListViewController().configured(by: sourceModel)
-            controller.identifier = WidgetIdentifier.source.rawValue
             return controller
         }()
         
         self.targetViewController = {
             let controller = MoneyListViewController().configured(by: targetModel)
-            controller.identifier = WidgetIdentifier.target.rawValue
             return controller
         }()
         
