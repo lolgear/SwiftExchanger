@@ -73,9 +73,22 @@ extension Quote : SourcesAndTargetsProtocol {
             let virtualQuote = VirtualQuote(quote: correctQuote, previousQuote: correctPreviousQuote, timestamp: timestamp, sourceCode: source, targetCode: target)
             return virtualQuote
         }
-        else {
+        else if (source == baseCode) {
             // fetch
             return find(source: source, target: target, context: context) as? Quote
+        }
+        else if (target == baseCode) {
+            // find and revert.
+            guard let found = find(source: target, target: source, context: context) as? Quote else {
+                return nil
+            }
+            let quote = found.quote == 0 ? 0 : 1 / found.quote
+            let previousQuote = found.previousQuote == 0 ? 0 : 1 / found.previousQuote
+            let revertedQuote = VirtualQuote(quote: quote, previousQuote: previousQuote, timestamp: found.timestamp, sourceCode: found.targetCode, targetCode: found.sourceCode)
+            return revertedQuote
+        }
+        else {
+            return nil
         }
     }
 
