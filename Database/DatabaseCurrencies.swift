@@ -10,5 +10,5 @@ import Foundation
 public enum Currencies : String {
     case USD
     case EUR
-    case GPB
+    case GBP
 }

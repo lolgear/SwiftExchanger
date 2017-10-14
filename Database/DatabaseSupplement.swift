@@ -55,6 +55,6 @@ extension DatabaseSupplement {
     public func resetStartCash(context: NSManagedObjectContext) {
         _ = Money.resetStartCash(currency: Currencies.EUR, context: context)
         _ = Money.resetStartCash(currency: Currencies.USD, context: context)
-        _ = Money.resetStartCash(currency: Currencies.GPB, context: context)
+        _ = Money.resetStartCash(currency: Currencies.GBP, context: context)
     }
 }
