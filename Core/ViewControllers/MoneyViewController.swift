@@ -18,7 +18,7 @@ class MoneyViewController: UIViewController {
         enum Sign {
             case source
             case target
-            var sign: String {
+            var symbol: String {
                 switch self {
                 case .source: return "-"
                 case .target: return "+"
@@ -28,7 +28,7 @@ class MoneyViewController: UIViewController {
     }
     
     //MARK: Properties
-    var model: Model?
+    var model: Model!
 //    var currencyLabel: UILabel!
 //    var valueLabel: UILabel!
     @IBOutlet weak var currencyLabel: UILabel!
@@ -60,7 +60,7 @@ extension MoneyViewController {
                 self.currencyLabel.text = model.currency
                 // add money format
                 self.valueLabel.text = "\(model.value)"
-                self.exchangeLabel.text = "(\(model.sign)\(model.exchange))"
+                self.exchangeLabel.text = "(\(model.sign.symbol)\(model.exchange))"
             }
         }
     }

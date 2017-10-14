@@ -12,6 +12,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MoneyViewController" customModule="SwiftExchanger" customModuleProvider="target">
             <connections>
                 <outlet property="currencyLabel" destination="2bX-V7-7Tt" id="PZH-rm-lHD"/>
+                <outlet property="exchangeLabel" destination="gGX-MQ-zft" id="Q8i-lY-lUM"/>
                 <outlet property="valueLabel" destination="3PV-I0-TV9" id="lAU-er-xR1"/>
                 <outlet property="view" destination="iN0-l3-epB" id="Jo2-lk-6RX"/>
             </connections>
@@ -21,21 +22,35 @@
             <rect key="frame" x="0.0" y="0.0" width="346" height="122"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2bX-V7-7Tt" userLabel="CurrencyLabel">
-                    <rect key="frame" x="16" y="20" width="42" height="21"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Value" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3PV-I0-TV9" userLabel="ValueLabel">
+                    <rect key="frame" x="16" y="81" width="42" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3PV-I0-TV9" userLabel="ValueLabel">
-                    <rect key="frame" x="16" y="81" width="42" height="21"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Exchange" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gGX-MQ-zft" userLabel="ExchangeLabel">
+                    <rect key="frame" x="78" y="81" width="74.5" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Currency" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2bX-V7-7Tt" userLabel="CurrencyLabel">
+                    <rect key="frame" x="16" y="20" width="70.5" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
+            <constraints>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="gGX-MQ-zft" secondAttribute="trailing" constant="16" id="866-9f-F7S"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="gGX-MQ-zft" secondAttribute="bottom" constant="20" id="NdW-pq-DbL"/>
+                <constraint firstItem="3PV-I0-TV9" firstAttribute="top" relation="greaterThanOrEqual" secondItem="2bX-V7-7Tt" secondAttribute="bottom" constant="10" id="a7h-GX-PYX"/>
+                <constraint firstItem="2bX-V7-7Tt" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="fsu-6H-eNr"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="3PV-I0-TV9" secondAttribute="bottom" constant="20" id="gtf-xx-V6a"/>
+                <constraint firstItem="2bX-V7-7Tt" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="20" id="hjp-7t-ueD"/>
+                <constraint firstItem="3PV-I0-TV9" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="jwJ-lp-CHj"/>
+                <constraint firstItem="gGX-MQ-zft" firstAttribute="leading" secondItem="3PV-I0-TV9" secondAttribute="trailing" constant="20" id="wzR-2R-Gl9"/>
+            </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <point key="canvasLocation" x="-4" y="26"/>
