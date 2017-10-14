@@ -20,9 +20,7 @@ import SnapKit
 //And we should add MoneyModel also?
 class MoneyListViewController: UIViewController {
     //MARK: Properties
-    var identifier: String!
     var model: Model!
-    weak var delegate: MoneyListViewControllerFlippingProtocol?
     var pageViewController: UIPageViewController?
     var pageControl: UIPageControl?
     
@@ -54,6 +52,7 @@ class MoneyListViewController: UIViewController {
 extension MoneyListViewController {
     func setup(by model: Model) {
         self.model = model
+        self.model.observingDelegate = self
         self.updateUI()
     }
     func configured(by model: Model) -> Self {
@@ -74,7 +73,7 @@ extension MoneyListViewController {
                 guard let money = self.model.find(by: viewController.model?.currency), let currency = money.currency else {
                     return
                 }
-                let model = MoneyViewController.Model(currency: currency, value: money.value)
+                let model = MoneyViewController.Model(currency: currency, value: money.value, exchange: self.model.chosenValue ?? 0, sign: self.model.identifier.sign)
                 viewController.setup(by: model)
             }
             else {
@@ -113,7 +112,7 @@ extension MoneyListViewController {
         guard let theMoney = money, let currency = money?.currency else {
             return nil
         }
-        let model = MoneyViewController.Model(currency: currency, value: theMoney.value)
+        let model = MoneyViewController.Model(currency: currency, value: theMoney.value, exchange: self.model.chosenValue ?? 0, sign: self.model.identifier.sign)
         return MoneyViewController().configured(by: model)
     }
     
@@ -186,9 +185,8 @@ extension MoneyListViewController: UIPageViewControllerDelegate {
         
         let money = self.model.moneyList?.fetchedObjects?[index]
         self.model.chosenCurrency = money?.currency
-//        let idx = self.presentationIndex(for: self.pageViewController!)
-//        print("chosen currency: \(String(describing: money?.currency)) with value: \(String(describing: money?.value)), index: \(String(describing: idx))")
-        self.delegate?.didChoose(money: money, at: index, for: self.model, in: self.identifier)
+        // trigger to update model and recalculate quote rate for chosen currency.
+        self.model.selectCurrency()
     }
 }
 
@@ -199,7 +197,7 @@ extension MoneyListViewController: MoneyListViewControllerModelObservingProtocol
             return
         }
         
-        let model = MoneyViewController.Model(currency: currency, value: money.value)
+        let model = MoneyViewController.Model(currency: currency, value: money.value, exchange: self.model.chosenValue ?? 0, sign: self.model.identifier.sign)
         self.currentViewController()?.setup(by: model)
     }
     

@@ -16,8 +16,24 @@ import DatabaseBeaver
     func didUpdateValue(value: Double)
 }
 
+@objc protocol MoneyListViewControllerModelProtocol {
+    func didSelectCurrency(current: String?)
+}
+
 extension MoneyListViewController {
     class Model: NSObject {
+        enum Identifier: String {
+            case source
+            case target
+            var sign: MoneyViewController.Model.Sign {
+                switch self {
+                case .source: return MoneyViewController.Model.Sign.source
+                case .target: return MoneyViewController.Model.Sign.target
+                }
+            }
+        }
+        var identifier: Identifier!
+
         var chosenCurrency: String?
         var chosenMoney: Money? {
             return find(by: self.chosenCurrency)
@@ -29,12 +45,16 @@ extension MoneyListViewController {
         var chosenValue: Double? {
             return self.value
         }
+        
+        
         private(set) var moneyList: NSFetchedResultsController<Money>?
         weak var observingDelegate: MoneyListViewControllerModelObservingProtocol?
-        weak var delegate: MoneyListViewControllerModelObservingProtocol?
-        init(moneyList: NSFetchedResultsController<Money>?) {
+        weak var modelDelegate: MoneyListViewControllerModelProtocol?
+        
+        init(moneyList: NSFetchedResultsController<Money>?, identifier: Identifier!) {
             super.init()
             _ = self.configuredByMoney(money: moneyList)
+            self.identifier = identifier
         }
     }
 }
@@ -82,7 +102,7 @@ extension MoneyListViewController.Model {
 
 //MARK: Update
 extension MoneyListViewController.Model {
-    func updateCurency(currency: String?) {
+    func updateCurrency(currency: String?) {
         // we should update currency and tell about it.
         self.chosenCurrency = currency
         observingDelegate?.didUpdateCurrency(currency: currency)
@@ -90,6 +110,13 @@ extension MoneyListViewController.Model {
     func updateValue(value: Double?) {
         self.value = value
         observingDelegate?.didUpdateValue(value: value ?? 0)
+    }
+}
+
+// MARK: Model events
+extension MoneyListViewController.Model {
+    func selectCurrency() {
+        self.modelDelegate?.didSelectCurrency(current: self.chosenCurrency)
     }
 }
 
