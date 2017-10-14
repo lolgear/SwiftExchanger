@@ -28,6 +28,9 @@ public struct VirtualQuote: Quotable {
 
     public var sourceCode: String?
     public var targetCode: String?
+    public static func oneToOneQuote(sourceCode: String?) -> Quotable {
+        return VirtualQuote(quote: 1, previousQuote: 1, timestamp: 0, sourceCode: sourceCode, targetCode: sourceCode)
+    }
 }
 extension Quote : Quotable {}
 extension Quote : SourcesAndTargetsProtocol {
