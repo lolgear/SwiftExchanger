@@ -56,6 +56,7 @@ extension BaseService: UIApplicationDelegate {
     
 }
 
+// MARK: Services Manager.
 class ServicesManager: NSObject {
     var services: [BaseService] = []
     static var manager: ServicesManager {
@@ -82,7 +83,9 @@ class ServicesManager: NSObject {
             service.tearDown()
         }
     }
+    
     func runAtFirstTime() {
+        storageSettings()
         let settings = ApplicationSettingsStorage.loaded()
         if !settings.alreadyConfiguredAfterRunAtFirstTime {
             for service in services as [ServicesOnceProtocol] {
@@ -90,6 +93,16 @@ class ServicesManager: NSObject {
             }
             settings.alreadyConfiguredAfterRunAtFirstTime = true
         }
+    }
+}
+
+//MARK: Settings.
+//It is the best place to change them.
+//We need production settings.
+extension ServicesManager {
+    //HINT: the best place to change default settings to something else.
+    func storageSettings() {
+        ApplicationSettingsStorage.DefaultSettings = ApplicationSettingsStorage.ProductionSettings
     }
 }
 
