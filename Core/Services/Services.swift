@@ -62,7 +62,7 @@ class ServicesManager: NSObject {
         return (UIApplication.shared.delegate as! AppDelegate).servicesManager
     }
     override init() {
-        services = [LoggingService(), KeyboardService(), NetworkService(), DatabaseService(), DataProviderService()]
+        services = [LoggingService(), KeyboardService(), NetworkService(), DatabaseService(), DataProviderService(), ViewControllersService()]
     }
     func service(name: String) -> BaseService? {
         let service = services.filter {type(of: $0).name == name}.first
@@ -126,7 +126,14 @@ extension ServicesManager: UIApplicationDelegate {
             return false
         }
         let model = ExchangeViewController.Model().configuredByMoney(database.fetchMoney(delegate: nil), database.fetchMoney(delegate: nil)).configuredByQuotes(database.fetchQuotes(delegate: nil)).configuredByCurrencies(Currencies.EUR.rawValue, Currencies.USD.rawValue)
-        application.keyWindow?.rootViewController = ExchangeViewController().configured(by: model)
+        // wrap controller into navigation.
+        let exchangeViewController = ExchangeViewController().configured(by: model)
+        ViewControllersService.service()?.rootViewController = exchangeViewController
+        let controller = ViewControllersService.service()?.blessedController()
+        guard controller != nil else {
+            return false
+        }
+        application.keyWindow?.rootViewController = controller
         return true
     }
     
