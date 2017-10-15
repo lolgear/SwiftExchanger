@@ -36,7 +36,15 @@
 		0A32F7E21F7A9D56009E4F21 /* Database.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0A32F7921F7A9A24009E4F21 /* Database.xcdatamodeld */; };
 		0A32F7E51F7A9DD5009E4F21 /* Money+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A32F7E41F7A9DD5009E4F21 /* Money+Extensions.swift */; };
 		0A32F7E71F7AA1F4009E4F21 /* Exchange+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A32F7E61F7AA1F4009E4F21 /* Exchange+Extensions.swift */; };
+		0A3DA2AE1F93C54500202564 /* ViewControllersService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A3DA2AD1F93C54500202564 /* ViewControllersService.swift */; };
 		0A4A62A81F9140400040A4D7 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4A62A71F9140400040A4D7 /* UIViewController+Extensions.swift */; };
+		0A78E1491F937FF100589B60 /* MoneyFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A78E1481F937FF100589B60 /* MoneyFormatter.swift */; };
+		0A78E14C1F93B52600589B60 /* TransactionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A78E14B1F93B52600589B60 /* TransactionTableViewCell.xib */; };
+		0A78E14E1F93B55000589B60 /* TransactionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A78E14D1F93B55000589B60 /* TransactionTableViewCell.swift */; };
+		0A78E1501F93B88F00589B60 /* DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A78E14F1F93B88F00589B60 /* DateFormatter.swift */; };
+		0A78E1521F93BD5300589B60 /* UITableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A78E1511F93BD5300589B60 /* UITableViewCell.swift */; };
+		0A78E1561F93BF9800589B60 /* TransactionsViewController+Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A78E1551F93BF9800589B60 /* TransactionsViewController+Model.swift */; };
+		0AA3E0A71F92B51200B83583 /* TransactionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA3E0A61F92B51200B83583 /* TransactionsViewController.swift */; };
 		0AA836A21F866D3000A2CF05 /* NSPredicate+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA836A11F866D3000A2CF05 /* NSPredicate+Extensions.swift */; };
 		0AA9FAEF1F8521150032DE1F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0AA9FADD1F8521150032DE1F /* Assets.xcassets */; };
 		0AA9FAF01F8521150032DE1F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0AA9FADE1F8521150032DE1F /* LaunchScreen.storyboard */; };
@@ -127,7 +135,15 @@
 		0A32F7D61F7A9CF1009E4F21 /* DatabaseCurrencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseCurrencies.swift; sourceTree = "<group>"; };
 		0A32F7E41F7A9DD5009E4F21 /* Money+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Money+Extensions.swift"; sourceTree = "<group>"; };
 		0A32F7E61F7AA1F4009E4F21 /* Exchange+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Exchange+Extensions.swift"; sourceTree = "<group>"; };
+		0A3DA2AD1F93C54500202564 /* ViewControllersService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllersService.swift; sourceTree = "<group>"; };
 		0A4A62A71F9140400040A4D7 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
+		0A78E1481F937FF100589B60 /* MoneyFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoneyFormatter.swift; sourceTree = "<group>"; };
+		0A78E14B1F93B52600589B60 /* TransactionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TransactionTableViewCell.xib; sourceTree = "<group>"; };
+		0A78E14D1F93B55000589B60 /* TransactionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionTableViewCell.swift; sourceTree = "<group>"; };
+		0A78E14F1F93B88F00589B60 /* DateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatter.swift; sourceTree = "<group>"; };
+		0A78E1511F93BD5300589B60 /* UITableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewCell.swift; sourceTree = "<group>"; };
+		0A78E1551F93BF9800589B60 /* TransactionsViewController+Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TransactionsViewController+Model.swift"; sourceTree = "<group>"; };
+		0AA3E0A61F92B51200B83583 /* TransactionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsViewController.swift; sourceTree = "<group>"; };
 		0AA836A11F866D3000A2CF05 /* NSPredicate+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSPredicate+Extensions.swift"; sourceTree = "<group>"; };
 		0AA9FADD1F8521150032DE1F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0AA9FADF1F8521150032DE1F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -265,9 +281,37 @@
 			path = Network;
 			sourceTree = "<group>";
 		};
+		0A78E1451F937FAA00589B60 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				0A78E14A1F93B51700589B60 /* UITableViews */,
+				0A78E1471F937FE100589B60 /* Formatters */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		0A78E1471F937FE100589B60 /* Formatters */ = {
+			isa = PBXGroup;
+			children = (
+				0A78E1481F937FF100589B60 /* MoneyFormatter.swift */,
+				0A78E14F1F93B88F00589B60 /* DateFormatter.swift */,
+			);
+			path = Formatters;
+			sourceTree = "<group>";
+		};
+		0A78E14A1F93B51700589B60 /* UITableViews */ = {
+			isa = PBXGroup;
+			children = (
+				0A78E14B1F93B52600589B60 /* TransactionTableViewCell.xib */,
+				0A78E14D1F93B55000589B60 /* TransactionTableViewCell.swift */,
+			);
+			path = UITableViews;
+			sourceTree = "<group>";
+		};
 		0AA9FADB1F8521150032DE1F /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				0A78E1451F937FAA00589B60 /* Views */,
 				0AD561A41F8D17C800662B3D /* Extensions */,
 				0AA9FADC1F8521150032DE1F /* Resources */,
 				0AA9FAE21F8521150032DE1F /* Models */,
@@ -316,6 +360,8 @@
 				0AD561AF1F8EA4F000662B3D /* MoneyListViewController+Model.swift */,
 				0AD5619E1F8BDC2500662B3D /* MoneyViewController.swift */,
 				0AD561A01F8D0E4300662B3D /* MoneyViewController.xib */,
+				0AA3E0A61F92B51200B83583 /* TransactionsViewController.swift */,
+				0A78E1551F93BF9800589B60 /* TransactionsViewController+Model.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -329,6 +375,7 @@
 				0AA9FAED1F8521150032DE1F /* NetworkService.swift */,
 				0AA9FAEE1F8521150032DE1F /* DatabaseService.swift */,
 				0ADB724E1F90261B00C888F1 /* KeyboardService.swift */,
+				0A3DA2AD1F93C54500202564 /* ViewControllersService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -347,6 +394,7 @@
 			children = (
 				0AD561A71F8D17D300662B3D /* UIView+Extensions.swift */,
 				0A4A62A71F9140400040A4D7 /* UIViewController+Extensions.swift */,
+				0A78E1511F93BD5300589B60 /* UITableViewCell.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -526,6 +574,7 @@
 			files = (
 				0AA9FAF01F8521150032DE1F /* LaunchScreen.storyboard in Resources */,
 				0AA9FAEF1F8521150032DE1F /* Assets.xcassets in Resources */,
+				0A78E14C1F93B52600589B60 /* TransactionTableViewCell.xib in Resources */,
 				0A32F7B21F7A9A24009E4F21 /* Info.plist in Resources */,
 				0AD561A11F8D0E4300662B3D /* MoneyViewController.xib in Resources */,
 				0AD561A31F8D129600662B3D /* ExchangeViewController.xib in Resources */,
@@ -699,10 +748,12 @@
 				0A32F7B01F7A9A24009E4F21 /* NetworkAPIClient.swift in Sources */,
 				0A32F7B11F7A9A24009E4F21 /* NetworkConfiguration.swift in Sources */,
 				0AA9FAF91F8521150032DE1F /* NetworkService.swift in Sources */,
+				0A78E1561F93BF9800589B60 /* TransactionsViewController+Model.swift in Sources */,
 				0A32F7AF1F7A9A24009E4F21 /* NetworkErrorFactory.swift in Sources */,
 				0AD5619F1F8BDC2500662B3D /* MoneyViewController.swift in Sources */,
 				0AA9FAF41F8521150032DE1F /* DataProvider.swift in Sources */,
 				0A2531581F88F040005996B2 /* ExchangeModel.swift in Sources */,
+				0AA3E0A71F92B51200B83583 /* TransactionsViewController.swift in Sources */,
 				0ADB724F1F90261B00C888F1 /* KeyboardService.swift in Sources */,
 				0AA9FAF61F8521150032DE1F /* LoggingService.swift in Sources */,
 				0AD561A81F8D17D300662B3D /* UIView+Extensions.swift in Sources */,
@@ -713,11 +764,16 @@
 				0A32F77B1F7A9984009E4F21 /* AppDelegate.swift in Sources */,
 				0A32F7AB1F7A9A24009E4F21 /* NetworkReachabilityManager.swift in Sources */,
 				0A32F7AC1F7A9A24009E4F21 /* NetworkCommand.swift in Sources */,
+				0A3DA2AE1F93C54500202564 /* ViewControllersService.swift in Sources */,
 				0AD561AE1F8EA06300662B3D /* ExchangeViewController+Model.swift in Sources */,
 				0AD5619D1F8BD18800662B3D /* MoneyListViewController.swift in Sources */,
+				0A78E1501F93B88F00589B60 /* DateFormatter.swift in Sources */,
 				0AD561B01F8EA4F000662B3D /* MoneyListViewController+Model.swift in Sources */,
 				0A32F7AD1F7A9A24009E4F21 /* NetworkResponse.swift in Sources */,
 				0A4A62A81F9140400040A4D7 /* UIViewController+Extensions.swift in Sources */,
+				0A78E14E1F93B55000589B60 /* TransactionTableViewCell.swift in Sources */,
+				0A78E1491F937FF100589B60 /* MoneyFormatter.swift in Sources */,
+				0A78E1521F93BD5300589B60 /* UITableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
