@@ -27,7 +27,6 @@ class ApplicationSettingsStorage {
     }
     static var ProductionSettings: ApplicationSettingsStorage = {
         let settings = ApplicationSettingsStorage()
-        settings.alreadyConfiguredAfterRunAtFirstTime = false
         settings.updateTime = 30 //30 seconds
         settings.backgroundFetch = true
         settings.networkAPIKey = ""// f8a9b90bc6525a28e131b47630a60abc
@@ -36,20 +35,17 @@ class ApplicationSettingsStorage {
     
     static var DeveloperSettings: ApplicationSettingsStorage = {
         let settings = ApplicationSettingsStorage()
-        settings.alreadyConfiguredAfterRunAtFirstTime = false
         settings.updateTime = 86400
         settings.backgroundFetch = false
         settings.networkAPIKey = "f8a9b90bc6525a28e131b47630a60abc"
         return settings
     }()
     
-    static var DefaultSettings: ApplicationSettingsStorage {
-        return DeveloperSettings
-    }
+    static var DefaultSettings = DeveloperSettings
     
     var alreadyConfiguredAfterRunAtFirstTime: Bool {
         get {
-            return settings[Attributes.alreadyConfiguredAfterRunAtFirstTime.identifier] as? Bool ?? ApplicationSettingsStorage.DefaultSettings.alreadyConfiguredAfterRunAtFirstTime
+            return settings[Attributes.alreadyConfiguredAfterRunAtFirstTime.identifier] as? Bool ?? false
         }
         set {
             settings[Attributes.alreadyConfiguredAfterRunAtFirstTime.identifier] = newValue as AnyObject
