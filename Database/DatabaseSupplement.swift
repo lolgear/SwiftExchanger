@@ -45,6 +45,10 @@ extension DatabaseSupplement {
         return Money.ldm_fetchAllSorted(by: "currency", ascending: true, with: predicate, groupBy: nil, delegate: delegate, context: context) as? NSFetchedResultsController<Money>
     }
     
+    public func fetchExchanges(predicate: NSPredicate?, delegate: NSFetchedResultsControllerDelegate?, context: NSManagedObjectContext) -> NSFetchedResultsController<Exchange>? {
+        return Exchange.ldm_fetchAllSorted(by: "timestamp", ascending: true, with: predicate, groupBy: nil, delegate: delegate, context: context) as? NSFetchedResultsController<Exchange>
+    }
+
     public func currencies(context: NSManagedObjectContext) -> [String] {
         return Quote.currencies(context: context).sorted()
     }
