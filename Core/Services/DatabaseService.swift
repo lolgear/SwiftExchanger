@@ -40,6 +40,12 @@ extension DatabaseService {
 
 //MARK: DatabaseSupplement
 extension DatabaseService {
+    func fetchExchanges(delegate: NSFetchedResultsControllerDelegate?) -> NSFetchedResultsController<Exchange>? {
+        guard checkStack(), let context = context else {
+            return nil
+        }
+        return supplement?.fetchExchanges(predicate: nil, delegate: delegate, context: context)
+    }
     func fetchConversions(delegate: NSFetchedResultsControllerDelegate) -> NSFetchedResultsController<NSFetchRequestResult>? {
         guard checkStack(), let context = context else {
             return nil
@@ -140,6 +146,9 @@ extension DatabaseService {
 // MARK: ServicesOnceProtocol
 extension DatabaseService {
     override func runAtFirstTime() {
+        self.resetCash()
+    }
+    func resetCash() {
         self.save(block: { context in
             if let theContext = context {
                 self.supplement?.resetStartCash(context: theContext)

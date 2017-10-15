@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TransactionTableViewCell" customModule="SwiftExchanger" customModuleProvider="target"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="155" id="rwA-4U-eco" customClass="TransactionTableViewCell" customModule="SwiftExchanger" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="155"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="rwA-4U-eco" id="Dj8-BZ-hug">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="154.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FromCurrency" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fDy-zw-NQj" userLabel="FromCurrency">
+                        <rect key="frame" x="8" y="48" width="109.5" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ToCurrency" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Ue-2V-ACl" userLabel="ToCurrency">
+                        <rect key="frame" x="278" y="48" width="89" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Timestamp" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5PI-kC-Wtc" userLabel="Timestamp">
+                        <rect key="frame" x="145" y="8" width="85.5" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TargetValue" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="onV-Sd-oFd" userLabel="TargetValue">
+                        <rect key="frame" x="276.5" y="92" width="90.5" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quote" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QD1-Ob-CcR" userLabel="Quote">
+                        <rect key="frame" x="163.5" y="125" width="47" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SourceValue" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jxC-9a-ekB" userLabel="SourceValue">
+                        <rect key="frame" x="8" y="92" width="95.5" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="5PI-kC-Wtc" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Dj8-BZ-hug" secondAttribute="leading" id="0IE-dB-v5a"/>
+                    <constraint firstItem="jxC-9a-ekB" firstAttribute="leading" secondItem="fDy-zw-NQj" secondAttribute="leading" id="2lf-eN-IcL"/>
+                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="5PI-kC-Wtc" secondAttribute="trailing" id="5xn-54-G95"/>
+                    <constraint firstItem="5PI-kC-Wtc" firstAttribute="top" secondItem="Dj8-BZ-hug" secondAttribute="top" constant="8" id="5zl-gF-ava"/>
+                    <constraint firstItem="QD1-Ob-CcR" firstAttribute="top" secondItem="jxC-9a-ekB" secondAttribute="bottom" constant="12" id="MS0-kd-elU"/>
+                    <constraint firstItem="onV-Sd-oFd" firstAttribute="trailing" secondItem="2Ue-2V-ACl" secondAttribute="trailing" id="OEw-0S-Q9h"/>
+                    <constraint firstAttribute="trailing" secondItem="2Ue-2V-ACl" secondAttribute="trailing" constant="8" id="Zra-st-Ogi"/>
+                    <constraint firstItem="fDy-zw-NQj" firstAttribute="top" secondItem="5PI-kC-Wtc" secondAttribute="bottom" constant="19" id="eCD-Aa-Eum"/>
+                    <constraint firstItem="QD1-Ob-CcR" firstAttribute="centerX" secondItem="Dj8-BZ-hug" secondAttribute="centerX" id="hbD-h7-uIv"/>
+                    <constraint firstItem="2Ue-2V-ACl" firstAttribute="top" secondItem="fDy-zw-NQj" secondAttribute="top" id="hg5-fV-8EV"/>
+                    <constraint firstItem="jxC-9a-ekB" firstAttribute="top" secondItem="fDy-zw-NQj" secondAttribute="bottom" constant="23" id="iN4-uG-0MS"/>
+                    <constraint firstItem="fDy-zw-NQj" firstAttribute="leading" secondItem="Dj8-BZ-hug" secondAttribute="leading" constant="8" id="leh-5H-9xN"/>
+                    <constraint firstItem="onV-Sd-oFd" firstAttribute="top" secondItem="jxC-9a-ekB" secondAttribute="top" id="u9Y-La-6eA"/>
+                    <constraint firstAttribute="bottom" secondItem="QD1-Ob-CcR" secondAttribute="bottom" constant="8.5" id="vCT-kE-VFM"/>
+                    <constraint firstItem="5PI-kC-Wtc" firstAttribute="centerX" secondItem="Dj8-BZ-hug" secondAttribute="centerX" id="zD9-ab-xNU"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="fromCurrency" destination="fDy-zw-NQj" id="VRs-8B-jX5"/>
+                <outlet property="quote" destination="QD1-Ob-CcR" id="GP3-dA-45l"/>
+                <outlet property="sourceValue" destination="jxC-9a-ekB" id="CUB-d1-XMk"/>
+                <outlet property="targetValue" destination="onV-Sd-oFd" id="Naq-CL-oMS"/>
+                <outlet property="timestamp" destination="5PI-kC-Wtc" id="nk8-bc-O8o"/>
+                <outlet property="toCurrency" destination="2Ue-2V-ACl" id="Hjq-bZ-tSK"/>
+            </connections>
+            <point key="canvasLocation" x="-31.5" y="-291.5"/>
+        </tableViewCell>
+    </objects>
+</document>
