@@ -54,11 +54,19 @@ extension DatabaseSupplement {
     }
 }
 
+
 //MARK: Setup
 extension DatabaseSupplement {
     public func resetStartCash(context: NSManagedObjectContext) {
         _ = Money.resetStartCash(currency: Currencies.EUR, context: context)
         _ = Money.resetStartCash(currency: Currencies.USD, context: context)
         _ = Money.resetStartCash(currency: Currencies.GBP, context: context)
+    }
+}
+
+//MARK: Reset
+extension DatabaseSupplement {
+    public func resetExchanges(predicate: NSPredicate?, context: NSManagedObjectContext) {
+        Exchange.ldm_deleteAll(predicate: predicate, in: context)
     }
 }

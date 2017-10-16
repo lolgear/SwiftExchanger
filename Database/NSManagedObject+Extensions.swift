@@ -42,4 +42,8 @@ extension NSManagedObject {
     open func ldm_deleteEntity(in context: NSManagedObjectContext) -> Bool {
         return mr_deleteEntity(in: context)
     }
+    open class func ldm_deleteAll(predicate: NSPredicate?, in context: NSManagedObjectContext) {
+        let thePredicate = predicate ?? NSPredicate(value: true)
+        mr_deleteAll(matching: thePredicate, in: context)
+    }
 }
