@@ -17,6 +17,7 @@ import SnapKit
 import SwiftMessages
 class ExchangeViewController: UIViewController {    
     //MARK: Properties
+    @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var sourceView: UIView!
     @IBOutlet weak var targetView: UIView!
     @IBOutlet weak var inputTextField: UITextField!
@@ -40,6 +41,17 @@ class ExchangeViewController: UIViewController {
             // error?
             return
         }
+        
+        // refresh control
+        if #available(iOS 10.0, *) {
+            let refreshControl = UIRefreshControl()
+            refreshControl.addTarget(self,
+                                     action: #selector(didPullToRefresh(sender:)),
+                                     for: .valueChanged)
+            scrollView.refreshControl = refreshControl
+        }
+        
+        // source
         self.sourceViewController = {
             let controller = MoneyListViewController().configured(by: sourceModel)
             return controller
@@ -90,7 +102,18 @@ extension ExchangeViewController {
     }
 }
 
-// Notifications
+// MARK: Refresh
+extension ExchangeViewController {
+    @objc func didPullToRefresh(sender: UIRefreshControl) {
+        DataProviderService.service()?.dataProvider.updateQuotes(completion: { result, error in
+            DispatchQueue.main.async {
+                sender.endRefreshing()
+            }
+        })
+    }
+}
+
+// MARK: Notifications
 extension ExchangeViewController {
     func showError(error: Error?) {
         DispatchQueue.main.async {
