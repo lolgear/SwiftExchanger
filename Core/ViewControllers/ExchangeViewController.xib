@@ -27,24 +27,24 @@
                     <rect key="frame" x="0.0" y="20" width="320" height="460"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KkE-AQ-XHm" userLabel="From Currency View">
-                            <rect key="frame" x="0.0" y="0.0" width="320" height="128"/>
-                            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
+                            <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="128" id="G4F-fl-Ykx"/>
+                                <constraint firstAttribute="height" constant="100" id="G4F-fl-Ykx"/>
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Erj-p2-rtt" userLabel="To Currency View">
-                            <rect key="frame" x="0.0" y="150" width="320" height="128"/>
-                            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <rect key="frame" x="0.0" y="122" width="320" height="100"/>
+                            <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         </view>
                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bHG-ep-olo" userLabel="Input Text Field">
-                            <rect key="frame" x="0.0" y="308" width="320" height="30"/>
+                            <rect key="frame" x="0.0" y="252" width="320" height="30"/>
                             <nil key="textColor"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
                             <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                         </textField>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZmH-I0-Hja">
-                            <rect key="frame" x="126.5" y="359" width="67" height="30"/>
+                            <rect key="frame" x="126.5" y="303" width="67" height="30"/>
                             <state key="normal" title="Exchange"/>
                             <connections>
                                 <action selector="exchangeButtonDidPressed:" destination="-1" eventType="touchUpInside" id="ljM-vS-wku"/>

@@ -31,6 +31,7 @@ extension TransactionsViewController {
     }
     func setupTableView() {        
         self.tableView.register(TransactionTableViewCell.nib(), forCellReuseIdentifier: TransactionTableViewCell.cellReuseIdentifier())
+        self.tableView.allowsSelection = false
     }
 }
 
