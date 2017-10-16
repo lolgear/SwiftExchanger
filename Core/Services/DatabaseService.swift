@@ -38,7 +38,7 @@ extension DatabaseService {
     }
 }
 
-//MARK: DatabaseSupplement
+//MARK: DatabaseSupplement#Fetch
 extension DatabaseService {
     func fetchExchanges(delegate: NSFetchedResultsControllerDelegate?) -> NSFetchedResultsController<Exchange>? {
         guard checkStack(), let context = context else {
@@ -81,7 +81,23 @@ extension DatabaseService {
         }
         return theSupplement.currencies(context: context)
     }
-    
+}
+
+//MARK: DatabaseSupplement#Delete
+extension DatabaseService {
+    func deleteAllExchanges() {
+        self.save(block: { context in
+            if let theContext = context {
+                self.supplement?.resetExchanges(predicate: nil, context: theContext)
+            }
+        }, completion: { result, error in
+            
+        })
+    }
+}
+
+//MARK: Save
+extension DatabaseService {
     func save(block:@escaping ((NSManagedObjectContext?) -> Void), completion: ((Bool, Error?) -> Void)?) {
         guard checkStack() else {
             return
