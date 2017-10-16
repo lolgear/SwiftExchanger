@@ -1,7 +1,7 @@
 PODS:
   - Alamofire (4.5.1)
-  - CocoaLumberjack/Default (3.2.1)
-  - CocoaLumberjack/Swift (3.2.1):
+  - CocoaLumberjack/Default (3.3.0)
+  - CocoaLumberjack/Swift (3.3.0):
     - CocoaLumberjack/Default
   - EncryptedCoreData (3.1):
     - SQLCipher (~> 3.4.0)
@@ -45,7 +45,7 @@ CHECKOUT OPTIONS:
 
 SPEC CHECKSUMS:
   Alamofire: 2d95912bf4c34f164fdfc335872e8c312acaea4a
-  CocoaLumberjack: 2800c03334042fe80589423c8d80e582dcaec482
+  CocoaLumberjack: 3c8c74683302f9012bb168e1c4b7ae3c0b558431
   EncryptedCoreData: f6762fb05f88a52f36c5648659abc91b57f244b4
   IQKeyboardManagerSwift: 3f340202ebe1a7076279b9b9b3c817243ddb3aab
   MagicalRecord: ce25d28585ab820a385e3f86eae2a5874b9ffd02
