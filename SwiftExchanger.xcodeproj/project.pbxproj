@@ -68,8 +68,6 @@
 		0AD561B01F8EA4F000662B3D /* MoneyListViewController+Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD561AF1F8EA4F000662B3D /* MoneyListViewController+Model.swift */; };
 		0ADB724F1F90261B00C888F1 /* KeyboardService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ADB724E1F90261B00C888F1 /* KeyboardService.swift */; };
 		759AA2433C9C42036FCF7BA9 /* Pods_NetworkWorm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3179189225DBD0644EE80715 /* Pods_NetworkWorm.framework */; };
-		92A8339DEC91D57FE45135EE /* Pods_Network.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 427907587868C7A8649F44AE /* Pods_Network.framework */; };
-		B6813F03114E320BC04BADEA /* Pods_Database.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8EC7C8A51DF756583F8DBC42 /* Pods_Database.framework */; };
 		DB2C43DD321D3C22CA4414F3 /* Pods_DatabaseBeaver.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D060948938A6A1D1F8A0D99 /* Pods_DatabaseBeaver.framework */; };
 /* End PBXBuildFile section */
 
@@ -194,7 +192,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B6813F03114E320BC04BADEA /* Pods_Database.framework in Frameworks */,
 				DB2C43DD321D3C22CA4414F3 /* Pods_DatabaseBeaver.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -203,7 +200,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				92A8339DEC91D57FE45135EE /* Pods_Network.framework in Frameworks */,
 				759AA2433C9C42036FCF7BA9 /* Pods_NetworkWorm.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
