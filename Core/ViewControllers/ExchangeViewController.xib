@@ -13,6 +13,7 @@
             <connections>
                 <outlet property="button" destination="ZmH-I0-Hja" id="Zzv-Gm-WY4"/>
                 <outlet property="inputTextField" destination="bHG-ep-olo" id="Mqm-i4-Tyb"/>
+                <outlet property="scrollView" destination="lYs-Py-4np" id="xJx-vp-bcr"/>
                 <outlet property="sourceView" destination="KkE-AQ-XHm" id="TsD-7p-GKE"/>
                 <outlet property="targetView" destination="Erj-p2-rtt" id="Es1-JU-kcE"/>
                 <outlet property="view" destination="iN0-l3-epB" id="m3V-WT-52v"/>
@@ -28,24 +29,27 @@
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KkE-AQ-XHm" userLabel="From Currency View">
                             <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
-                            <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                            <color key="backgroundColor" white="0.96999999999999997" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="100" id="G4F-fl-Ykx"/>
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Erj-p2-rtt" userLabel="To Currency View">
-                            <rect key="frame" x="0.0" y="122" width="320" height="100"/>
-                            <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                            <rect key="frame" x="0.0" y="100" width="320" height="100"/>
+                            <color key="backgroundColor" red="0.96078431369999995" green="0.96078431369999995" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
                         </view>
-                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bHG-ep-olo" userLabel="Input Text Field">
-                            <rect key="frame" x="0.0" y="252" width="320" height="30"/>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bHG-ep-olo" userLabel="Input Text Field">
+                            <rect key="frame" x="0.0" y="230" width="320" height="40"/>
                             <nil key="textColor"/>
-                            <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
+                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="33"/>
                             <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                         </textField>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZmH-I0-Hja">
-                            <rect key="frame" x="126.5" y="303" width="67" height="30"/>
-                            <state key="normal" title="Exchange"/>
+                            <rect key="frame" x="110.5" y="291" width="99" height="40"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                            <state key="normal" title="Exchange">
+                                <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
                             <connections>
                                 <action selector="exchangeButtonDidPressed:" destination="-1" eventType="touchUpInside" id="ljM-vS-wku"/>
                             </connections>
@@ -58,7 +62,7 @@
                         <constraint firstItem="Erj-p2-rtt" firstAttribute="trailing" secondItem="KkE-AQ-XHm" secondAttribute="trailing" id="FbL-uP-Psc"/>
                         <constraint firstItem="ZmH-I0-Hja" firstAttribute="top" secondItem="bHG-ep-olo" secondAttribute="bottom" constant="21" id="LhJ-NT-hch"/>
                         <constraint firstItem="KkE-AQ-XHm" firstAttribute="top" secondItem="lYs-Py-4np" secondAttribute="top" id="SWS-1r-3nQ"/>
-                        <constraint firstItem="Erj-p2-rtt" firstAttribute="top" secondItem="KkE-AQ-XHm" secondAttribute="bottom" constant="22" id="Zbl-ia-Y6k"/>
+                        <constraint firstItem="Erj-p2-rtt" firstAttribute="top" secondItem="KkE-AQ-XHm" secondAttribute="bottom" id="Zbl-ia-Y6k"/>
                         <constraint firstItem="ZmH-I0-Hja" firstAttribute="centerX" secondItem="lYs-Py-4np" secondAttribute="centerX" id="Zip-Wf-P6m"/>
                         <constraint firstAttribute="trailing" secondItem="KkE-AQ-XHm" secondAttribute="trailing" id="f26-lr-1Lo"/>
                         <constraint firstItem="Erj-p2-rtt" firstAttribute="leading" secondItem="KkE-AQ-XHm" secondAttribute="leading" id="hfG-Ib-dzK"/>
