@@ -47,14 +47,27 @@ class ViewControllersService: BaseService {
                 return "Transactions"
             }
         }
+        class ResetExchanges: NavigationAction {
+            override func action(button: UIBarButtonItem?) {
+                guard let database = DatabaseService.service() else {
+                    return
+                }
+                database.deleteAllExchanges()
+            }
+            override func title() -> String? {
+                return "ResetAll"
+            }
+        }
         // bind to itself
         enum NavigationActionType {
             case resetCash
             case showTransactions
+            case resetExchanges
             func action() -> NavigationAction {
                 switch self {
                 case .resetCash: return ResetCash()
                 case .showTransactions: return ShowTransactions()
+                case .resetExchanges: return ResetExchanges()
                 }
             }
         }
@@ -62,6 +75,10 @@ class ViewControllersService: BaseService {
     var rootViewController: UIViewController?
     var leftActions: [NavigationAction]?
     var rightActions: [NavigationAction]?
+    
+    // add later correct actions hanlding via push / pop
+    var currentLeftActions: [NavigationAction]?
+    var currentRightActions: [NavigationAction]?
 }
 
 //MARK: Controller preparation
@@ -92,6 +109,7 @@ extension ViewControllersService {
         // setup all necessary items and after that we are ready for rootViewController
         self.leftActions = [NavigationAction.NavigationActionType.resetCash.action()]
         self.rightActions = [NavigationAction.NavigationActionType.showTransactions.action().configured(by: self)]
+        self.currentRightActions = [NavigationAction.NavigationActionType.resetExchanges.action()]
     }
 }
 
@@ -101,6 +119,16 @@ extension ViewControllersService: ViewControllersServiceNavigationActionProtocol
         guard let theController = controller else {
             return
         }
+        // before push setup controller by actions.
+        setupController(controller: theController)
         self.rootViewController?.navigationController?.pushViewController(theController, animated: true)
+    }
+    func setupController(controller: UIViewController) {
+        switch controller {
+        case let item as TransactionsViewController:
+            item.navigationItem.rightBarButtonItems = self.currentRightActions?.map {$0.barButton()}
+            item.navigationItem.leftBarButtonItems = self.currentLeftActions?.map {$0.barButton()}
+        default: break
+        }
     }
 }
