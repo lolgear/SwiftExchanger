@@ -30,6 +30,8 @@ class MoneyListViewController: UIViewController {
         self.setupUIElements()
         self.addConstraints()
         self.updateUI()
+        UIPageControl.appearance().pageIndicatorTintColor = UIColor.lightGray
+        UIPageControl.appearance().currentPageIndicatorTintColor = UIColor.black
     }
     
     //MARK: View Lifecycle extended.
@@ -160,15 +162,15 @@ extension MoneyListViewController: UIPageViewControllerDataSource {
         }
         return result
     }
-//    func presentationCount(for pageViewController: UIPageViewController) -> Int {
-//        return self.model.numberOfObjects()
-//    }
-//    func presentationIndex(for pageViewController: UIPageViewController) -> Int {
-//        let index = self.model.chosenIndex
-//        let result = index ?? 0
-//        print("index: \(String(describing: index)), result: \(result)")
-//        return result
-//    }
+    func presentationCount(for pageViewController: UIPageViewController) -> Int {
+        return self.model.numberOfObjects()
+    }
+    func presentationIndex(for pageViewController: UIPageViewController) -> Int {
+        let index = self.model.chosenIndex
+        let result = index ?? 0
+        print("index: \(String(describing: index)), result: \(result)")
+        return result
+    }
 }
 
 //MARK: UIPageViewControllerDelegate

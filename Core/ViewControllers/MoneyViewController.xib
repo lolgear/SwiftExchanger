@@ -5,6 +5,7 @@
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -23,33 +24,33 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Value" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3PV-I0-TV9" userLabel="ValueLabel">
-                    <rect key="frame" x="16" y="53" width="47" height="24"/>
+                    <rect key="frame" x="16" y="73" width="47" height="24"/>
                     <fontDescription key="fontDescription" type="system" weight="light" pointSize="20"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Exchange" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gGX-MQ-zft" userLabel="ExchangeLabel">
-                    <rect key="frame" x="83" y="53" width="84.5" height="24"/>
+                    <rect key="frame" x="83" y="73" width="84.5" height="24"/>
                     <fontDescription key="fontDescription" type="system" weight="light" pointSize="20"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Currency" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2bX-V7-7Tt" userLabel="CurrencyLabel">
-                    <rect key="frame" x="16" y="20" width="66" height="19.5"/>
+                    <rect key="frame" x="16" y="0.0" width="66" height="19.5"/>
                     <fontDescription key="fontDescription" type="system" weight="light" pointSize="16"/>
                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
             <constraints>
+                <constraint firstItem="gGX-MQ-zft" firstAttribute="bottom" secondItem="3PV-I0-TV9" secondAttribute="bottom" id="1ZO-DK-9JS"/>
+                <constraint firstItem="3PV-I0-TV9" firstAttribute="leading" secondItem="2bX-V7-7Tt" secondAttribute="leading" id="4IH-bU-auR"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="gGX-MQ-zft" secondAttribute="trailing" constant="16" id="866-9f-F7S"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="gGX-MQ-zft" secondAttribute="bottom" constant="20" id="NdW-pq-DbL"/>
+                <constraint firstItem="2bX-V7-7Tt" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="topMargin" id="KqE-Mn-dXz"/>
+                <constraint firstAttribute="leadingMargin" secondItem="2bX-V7-7Tt" secondAttribute="leading" id="Pbx-Hi-1z0"/>
                 <constraint firstItem="3PV-I0-TV9" firstAttribute="top" relation="greaterThanOrEqual" secondItem="2bX-V7-7Tt" secondAttribute="bottom" constant="10" id="a7h-GX-PYX"/>
-                <constraint firstItem="2bX-V7-7Tt" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="fsu-6H-eNr"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="3PV-I0-TV9" secondAttribute="bottom" constant="20" id="gtf-xx-V6a"/>
-                <constraint firstItem="2bX-V7-7Tt" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="20" id="hjp-7t-ueD"/>
-                <constraint firstItem="3PV-I0-TV9" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="jwJ-lp-CHj"/>
                 <constraint firstItem="gGX-MQ-zft" firstAttribute="leading" secondItem="3PV-I0-TV9" secondAttribute="trailing" constant="20" id="wzR-2R-Gl9"/>
+                <constraint firstAttribute="bottomMargin" secondItem="3PV-I0-TV9" secondAttribute="bottom" id="zH0-nz-2wn"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
