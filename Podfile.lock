@@ -1,21 +1,21 @@
 PODS:
-  - Alamofire (4.5.1)
-  - CocoaLumberjack/Default (3.3.0)
-  - CocoaLumberjack/Swift (3.3.0):
+  - Alamofire (4.7.2)
+  - CocoaLumberjack/Default (3.4.2)
+  - CocoaLumberjack/Swift (3.4.2):
     - CocoaLumberjack/Default
   - EncryptedCoreData (3.1):
     - SQLCipher (~> 3.4.0)
   - IQKeyboardManagerSwift (5.0.0)
-  - MagicalRecord (3.0.0.dev.1506436049):
-    - MagicalRecord/Core (= 3.0.0.dev.1506436049)
-  - MagicalRecord/Core (3.0.0.dev.1506436049)
+  - MagicalRecord (3.0.0.dev.1526592500):
+    - MagicalRecord/Core (= 3.0.0.dev.1526592500)
+  - MagicalRecord/Core (3.0.0.dev.1526592500)
   - SnapKit (4.0.0)
-  - SQLCipher (3.4.1):
-    - SQLCipher/standard (= 3.4.1)
-  - SQLCipher/common (3.4.1)
-  - SQLCipher/standard (3.4.1):
+  - SQLCipher (3.4.2):
+    - SQLCipher/standard (= 3.4.2)
+  - SQLCipher/common (3.4.2)
+  - SQLCipher/standard (3.4.2):
     - SQLCipher/common
-  - SwiftMessages (4.0.0)
+  - SwiftMessages (4.1.2)
   - XMLDictionary (1.4.1)
 
 DEPENDENCIES:
@@ -27,6 +27,16 @@ DEPENDENCIES:
   - SnapKit
   - SwiftMessages
   - XMLDictionary
+
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - Alamofire
+    - CocoaLumberjack
+    - IQKeyboardManagerSwift
+    - SnapKit
+    - SQLCipher
+    - SwiftMessages
+    - XMLDictionary
 
 EXTERNAL SOURCES:
   EncryptedCoreData:
@@ -40,20 +50,20 @@ CHECKOUT OPTIONS:
     :commit: b97ffaf2f19dad4d1558bc9b0668cc2e09d17347
     :git: https://github.com/project-imas/encrypted-core-data
   MagicalRecord:
-    :commit: b1e621cf0557d5d1f245658ae9adb6004081bef6
+    :commit: 14a5935b9852d285898555ebb405084077a362e5
     :git: https://github.com/magicalpanda/MagicalRecord.git
 
 SPEC CHECKSUMS:
-  Alamofire: 2d95912bf4c34f164fdfc335872e8c312acaea4a
-  CocoaLumberjack: 3c8c74683302f9012bb168e1c4b7ae3c0b558431
+  Alamofire: e4fa87002c137ba2d8d634d2c51fabcda0d5c223
+  CocoaLumberjack: db7cc9e464771f12054c22ff6947c5a58d43a0fd
   EncryptedCoreData: f6762fb05f88a52f36c5648659abc91b57f244b4
   IQKeyboardManagerSwift: 3f340202ebe1a7076279b9b9b3c817243ddb3aab
-  MagicalRecord: ce25d28585ab820a385e3f86eae2a5874b9ffd02
+  MagicalRecord: 2653c12b3c92a8c0055dde1346cdf19ffaa68fe2
   SnapKit: a42d492c16e80209130a3379f73596c3454b7694
-  SQLCipher: 43d12c0eb9c57fb438749618fc3ce0065509a559
-  SwiftMessages: cd565e0e7d095584be1770c012c6b5be4183b5ee
+  SQLCipher: f9fcf29b2e59ced7defc2a2bdd0ebe79b40d4990
+  SwiftMessages: d81f48c1f8b6bc1dbebdfffe11226f0344f937ca
   XMLDictionary: fa07b6ff422b3a91d47a5de9bc82e3fc04fbd167
 
 PODFILE CHECKSUM: 23e957d61da044a7b259b37dd7e55a393958c04d
 
-COCOAPODS: 1.3.1
+COCOAPODS: 1.5.0
