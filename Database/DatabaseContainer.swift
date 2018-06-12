@@ -177,7 +177,7 @@ class DatabaseContainerModern_Encryption: DatabaseContainerModern {
     }
     
     override func persistentStores(at urls: [URL], names: [String]) -> [NSPersistentStoreDescription] {
-        return urls.flatMap {
+        return urls.compactMap {
             persistentStore(at: $0, name: names.first!)
         }
     }

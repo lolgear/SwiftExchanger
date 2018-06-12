@@ -44,6 +44,7 @@
 		0A78E1501F93B88F00589B60 /* DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A78E14F1F93B88F00589B60 /* DateFormatter.swift */; };
 		0A78E1521F93BD5300589B60 /* UITableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A78E1511F93BD5300589B60 /* UITableViewCell.swift */; };
 		0A78E1561F93BF9800589B60 /* TransactionsViewController+Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A78E1551F93BF9800589B60 /* TransactionsViewController+Model.swift */; };
+		0A89EE1220D0242F00DCEDB5 /* NavigationTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A89EE1120D0242F00DCEDB5 /* NavigationTransition.swift */; };
 		0AA3E0A71F92B51200B83583 /* TransactionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA3E0A61F92B51200B83583 /* TransactionsViewController.swift */; };
 		0AA836A21F866D3000A2CF05 /* NSPredicate+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA836A11F866D3000A2CF05 /* NSPredicate+Extensions.swift */; };
 		0AA9FAEF1F8521150032DE1F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0AA9FADD1F8521150032DE1F /* Assets.xcassets */; };
@@ -141,6 +142,7 @@
 		0A78E14F1F93B88F00589B60 /* DateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatter.swift; sourceTree = "<group>"; };
 		0A78E1511F93BD5300589B60 /* UITableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewCell.swift; sourceTree = "<group>"; };
 		0A78E1551F93BF9800589B60 /* TransactionsViewController+Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TransactionsViewController+Model.swift"; sourceTree = "<group>"; };
+		0A89EE1120D0242F00DCEDB5 /* NavigationTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationTransition.swift; sourceTree = "<group>"; };
 		0AA3E0A61F92B51200B83583 /* TransactionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsViewController.swift; sourceTree = "<group>"; };
 		0AA836A11F866D3000A2CF05 /* NSPredicate+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSPredicate+Extensions.swift"; sourceTree = "<group>"; };
 		0AA9FADD1F8521150032DE1F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -304,9 +306,26 @@
 			path = UITableViews;
 			sourceTree = "<group>";
 		};
+		0A89EE0F20D023D600DCEDB5 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				0A89EE1020D023EF00DCEDB5 /* Transitions */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		0A89EE1020D023EF00DCEDB5 /* Transitions */ = {
+			isa = PBXGroup;
+			children = (
+				0A89EE1120D0242F00DCEDB5 /* NavigationTransition.swift */,
+			);
+			path = Transitions;
+			sourceTree = "<group>";
+		};
 		0AA9FADB1F8521150032DE1F /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				0A89EE0F20D023D600DCEDB5 /* Base */,
 				0A78E1451F937FAA00589B60 /* Views */,
 				0AD561A41F8D17C800662B3D /* Extensions */,
 				0AA9FADC1F8521150032DE1F /* Resources */,
@@ -710,6 +729,7 @@
 				0AA9FAF81F8521150032DE1F /* DataProviderService.swift in Sources */,
 				0AA9FAF71F8521150032DE1F /* Services.swift in Sources */,
 				0A32F77B1F7A9984009E4F21 /* AppDelegate.swift in Sources */,
+				0A89EE1220D0242F00DCEDB5 /* NavigationTransition.swift in Sources */,
 				0A32F7AB1F7A9A24009E4F21 /* NetworkReachabilityManager.swift in Sources */,
 				0A32F7AC1F7A9A24009E4F21 /* NetworkCommand.swift in Sources */,
 				0A3DA2AE1F93C54500202564 /* ViewControllersService.swift in Sources */,
@@ -939,7 +959,7 @@
 				INFOPLIST_FILE = Database/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = org.opensource.Database;
+				PRODUCT_BUNDLE_IDENTIFIER = org.opensource.DatabaseWorm;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
@@ -968,7 +988,7 @@
 				INFOPLIST_FILE = Database/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = org.opensource.Database;
+				PRODUCT_BUNDLE_IDENTIFIER = org.opensource.DatabaseWorm;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
@@ -993,7 +1013,7 @@
 				INFOPLIST_FILE = Network/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = org.opensource.Network;
+				PRODUCT_BUNDLE_IDENTIFIER = org.opensource.NetworkWorm;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.0;
@@ -1017,7 +1037,7 @@
 				INFOPLIST_FILE = Network/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = org.opensource.Network;
+				PRODUCT_BUNDLE_IDENTIFIER = org.opensource.NetworkWorm;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.0;
