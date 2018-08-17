@@ -199,7 +199,7 @@ extension DailyQuotesResponse {
         guard let currencies = cubeItems["Cube"] as? [[String: AnyObject]] else {
             return nil
         }
-        let result = currencies.flatMap { (dictionary) -> (String, Double)? in
+        let result = currencies.compactMap { (dictionary) -> (String, Double)? in
             guard let currency = dictionary["currency"] as? String, let rateString = dictionary["rate"] as? String, let rate = Double(rateString) else {
                 return nil
             }

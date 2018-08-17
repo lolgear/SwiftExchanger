@@ -13,3 +13,5 @@ The size of an animal is a frequency of bug.
 ### Known issues.
 [:elephant:] Updates of converted values are delayed.  
 [:rat:] Updates could show wrong values.
+[:elephant:] Run always `pod update` to avoid `sandbox-is-out-of-sync` error.
+[:elephant:] CocoaPods.

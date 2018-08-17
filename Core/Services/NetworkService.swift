@@ -23,7 +23,7 @@ extension NetworkService {
 
 extension NetworkService {
     override func setup() {
-        UIApplication.shared.setMinimumBackgroundFetchInterval(UIApplicationBackgroundFetchIntervalMinimum)
+        UIApplication.shared.setMinimumBackgroundFetchInterval(UIApplication.backgroundFetchIntervalMinimum)
         client = APIClient(configuration: clientConfiguration())
         client.reachabilityManager?.startMonitoring()
     }

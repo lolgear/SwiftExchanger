@@ -20,7 +20,6 @@
 		0A32F7AF1F7A9A24009E4F21 /* NetworkErrorFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A32F79E1F7A9A24009E4F21 /* NetworkErrorFactory.swift */; };
 		0A32F7B01F7A9A24009E4F21 /* NetworkAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A32F79F1F7A9A24009E4F21 /* NetworkAPIClient.swift */; };
 		0A32F7B11F7A9A24009E4F21 /* NetworkConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A32F7A01F7A9A24009E4F21 /* NetworkConfiguration.swift */; };
-		0A32F7B21F7A9A24009E4F21 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0A32F7A11F7A9A24009E4F21 /* Info.plist */; };
 		0A32F7BF1F7A9A48009E4F21 /* DatabaseBeaver.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A32F7B81F7A9A48009E4F21 /* DatabaseBeaver.framework */; };
 		0A32F7C01F7A9A48009E4F21 /* DatabaseBeaver.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0A32F7B81F7A9A48009E4F21 /* DatabaseBeaver.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		0A32F7D11F7A9A52009E4F21 /* NetworkWorm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A32F7CA1F7A9A52009E4F21 /* NetworkWorm.framework */; };
@@ -541,6 +540,7 @@
 				TargetAttributes = {
 					0A32F7761F7A9984009E4F21 = {
 						CreatedOnToolsVersion = 9.0;
+						LastSwiftMigration = 1000;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
@@ -550,7 +550,7 @@
 					};
 					0A32F7B71F7A9A48009E4F21 = {
 						CreatedOnToolsVersion = 9.0;
-						LastSwiftMigration = 0900;
+						LastSwiftMigration = 1000;
 						ProvisioningStyle = Automatic;
 					};
 					0A32F7C91F7A9A52009E4F21 = {
@@ -587,7 +587,6 @@
 				0AA9FAF01F8521150032DE1F /* LaunchScreen.storyboard in Resources */,
 				0AA9FAEF1F8521150032DE1F /* Assets.xcassets in Resources */,
 				0A78E14C1F93B52600589B60 /* TransactionTableViewCell.xib in Resources */,
-				0A32F7B21F7A9A24009E4F21 /* Info.plist in Resources */,
 				0AD561A11F8D0E4300662B3D /* MoneyViewController.xib in Resources */,
 				0AD561A31F8D129600662B3D /* ExchangeViewController.xib in Resources */,
 			);
@@ -920,7 +919,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = org.opensource.SwiftExchanger;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -937,7 +936,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = org.opensource.SwiftExchanger;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -964,7 +963,7 @@
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -992,7 +991,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";

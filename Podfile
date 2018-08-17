@@ -84,10 +84,32 @@ target targetName do
 	services
 end
 
+class TargetSanitizer
+	class << self
+		def set_swift_version(target)
+	        target.build_configurations.each do |config|
+	            config.build_settings['SWIFT_VERSION'] = '4.0'
+	        end
+		end
+		def disable_warnings(target)
+			sources = target.source_build_phase
+			source_files = sources.files
+			unless source_files.nil?
+				target.add_file_references(source_files.map(&:file_ref), '-w')
+			end
+		end
+		def disable_analyze_action(target)
+			target.build_configurations.each do |config|
+		        config.build_settings['OTHER_CFLAGS'] = "$(inherited) -Qunused-arguments -Xanalyzer -analyzer-disable-all-checks"
+		    end
+		end
+	end
+end
+
 post_install do |installer|
-    installer.pods_project.targets.each do |target|
-        target.build_configurations.each do |config|
-            config.build_settings['SWIFT_VERSION'] = '4.0'
-        end
-    end
+	installer.pods_project.targets.each do |target|
+		TargetSanitizer.set_swift_version(target)
+		TargetSanitizer.disable_warnings(target)
+		TargetSanitizer.disable_analyze_action(target)
+	end
 end
